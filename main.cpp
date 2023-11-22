@@ -253,7 +253,10 @@ int main(int argc, char** argv)
     ssl::context ctx{ ssl::context::tlsv12_client };
 
     // This holds the root certificate used for verification
-    load_root_certificates(ctx);
+    //load_root_certificates(ctx);
+
+    // Ignore any certification issues
+    ctx.set_verify_mode(boost::asio::ssl::verify_none);
 
     // Launch the asynchronous operation
     std::make_shared<session>(ioc, ctx)->run(host, port, text);
