@@ -136,6 +136,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="root_certificates.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\boost.1.83.0\build\boost.targets" Condition="Exists('packages\boost.1.83.0\build\boost.targets')" />
@@ -183,6 +186,7 @@
     <Import Project="packages\boost_wserialization-vc143.1.83.0\build\boost_wserialization-vc143.targets" Condition="Exists('packages\boost_wserialization-vc143.1.83.0\build\boost_wserialization-vc143.targets')" />
     <Import Project="packages\boost_zlib-vc143.1.83.0\build\boost_zlib-vc143.targets" Condition="Exists('packages\boost_zlib-vc143.1.83.0\build\boost_zlib-vc143.targets')" />
     <Import Project="packages\boost-vc143.1.83.0\build\boost-vc143.targets" Condition="Exists('packages\boost-vc143.1.83.0\build\boost-vc143.targets')" />
+    <Import Project="packages\openssl-vc140-static-32_64.1.1.1.1\build\native\openssl-vc140-static-32_64.targets" Condition="Exists('packages\openssl-vc140-static-32_64.1.1.1.1\build\native\openssl-vc140-static-32_64.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -233,5 +237,6 @@
     <Error Condition="!Exists('packages\boost_wserialization-vc143.1.83.0\build\boost_wserialization-vc143.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_wserialization-vc143.1.83.0\build\boost_wserialization-vc143.targets'))" />
     <Error Condition="!Exists('packages\boost_zlib-vc143.1.83.0\build\boost_zlib-vc143.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_zlib-vc143.1.83.0\build\boost_zlib-vc143.targets'))" />
     <Error Condition="!Exists('packages\boost-vc143.1.83.0\build\boost-vc143.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost-vc143.1.83.0\build\boost-vc143.targets'))" />
+    <Error Condition="!Exists('packages\openssl-vc140-static-32_64.1.1.1.1\build\native\openssl-vc140-static-32_64.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\openssl-vc140-static-32_64.1.1.1.1\build\native\openssl-vc140-static-32_64.targets'))" />
   </Target>
 </Project>
